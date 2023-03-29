@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class PickUpAnimals : MonoBehaviour
@@ -7,6 +8,8 @@ public class PickUpAnimals : MonoBehaviour
 
     public GameObject PickUpText;
     public GameObject AnimalsOnPlayer;
+    public PlayerHasAnimal HasAnimal;
+    public bool isAnimal1;
 
     void Start()
     {
@@ -16,18 +19,34 @@ public class PickUpAnimals : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if(other.gameObject.tag == "Player")
+        if(other.gameObject.tag == "Player") 
         {
 
             PickUpText.SetActive(true);
 
             if (Input.GetKey(KeyCode.E))
             {
-                this.gameObject.SetActive(false);
+                if (isAnimal1 == true && HasAnimal.HasAnimal == false)
+                {
+                    HasAnimal.HasAnimal = true;
 
-                AnimalsOnPlayer.SetActive(true);
+                    this.gameObject.SetActive(false);
 
-                PickUpText.SetActive(false);
+                    AnimalsOnPlayer.SetActive(true);
+
+                    PickUpText.SetActive(false);
+                }
+                if (isAnimal1 == false && HasAnimal.HasAnimal2 == false)
+                {
+                    HasAnimal.HasAnimal2 = true;
+
+                    this.gameObject.SetActive(false);
+
+                    AnimalsOnPlayer.SetActive(true);
+
+                    PickUpText.SetActive(false);
+                }
+
             }
         }
     }

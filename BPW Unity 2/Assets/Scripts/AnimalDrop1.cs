@@ -7,6 +7,9 @@ public class AnimalDrop1 : MonoBehaviour
 
     public GameObject DropText;
     public GameObject AnimalOnArk;
+    public PlayerHasAnimal HasAnimal;
+    public GameObject PreviousAnimal;
+    public GameObject GameOverScreen;
 
     void Start()
     {
@@ -23,6 +26,18 @@ public class AnimalDrop1 : MonoBehaviour
 
             if (Input.GetKey(KeyCode.E))
             {
+                if (PreviousAnimal != null)
+                {
+                    if (PreviousAnimal.activeSelf == false)
+                    {
+                        GameOverScreen.SetActive(true);
+
+                        this.gameObject.SetActive(false);
+                    }
+                }
+
+                HasAnimal.HasAnimal = false;
+
                 this.gameObject.SetActive(false);
 
                 AnimalOnArk.SetActive(true);
