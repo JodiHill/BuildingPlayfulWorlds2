@@ -8,17 +8,12 @@ public class ArkCheckWolf : MonoBehaviour
 
     public GameObject Wolf;
 
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
     void Update()
     {
-        if (Wolf.activeSelf) 
+        if (Wolf.activeSelf)
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 4);
         }
     }
+        
 }

@@ -26,4 +26,9 @@ public class MainMenu : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 4);
     }
+
+    public void GoToMenu()
+    {
+        SceneManager.LoadScene(0);
+    }
 }
