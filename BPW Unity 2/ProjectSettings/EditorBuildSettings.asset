@@ -17,5 +17,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Uni's Ark L3.unity
     guid: e5d44a4295e1a7e43a020a0538daafbc
+  - enabled: 1
+    path: Assets/Scenes/Uni's Ark Tutorial.unity
+    guid: d5e7e7f8696586040ad11e2f01455bc1
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 027ef1254a6e87a42b290b3d2a7fbd15, type: 2}
